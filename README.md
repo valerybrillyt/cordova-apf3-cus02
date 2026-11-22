@@ -2,7 +2,11 @@
 
 Registro de pedidos de mesa o para llevar para Pastelería-Cafetería Córdova, local sede Chifa.
 
+Repositorio: https://github.com/valerybrillyt/cordova-apf3-cus02
+
 La cadena real es: `registro.ejs` → `RegistroPedidoComponent.js` → `PedidosApiService.js` → `GestionPedidosController` → `PedidoService` → `PedidoDAO` → MySQL 8.
+
+Para fotos del código en el informe, ver `docs/evidencias/APF3/GUIA_FOTOS_CODIGO.md`. Los PDF y Word del APF2/APF3 están en `docs/fuentes/`.
 
 ## Credencial ficticia
 
