@@ -1,0 +1,5 @@
+Fecha: Sat Nov 21 23:23:02 -05 2026
+Operación: GET /health y SELECT VERSION() mediante el usuario de aplicación, sin imprimir claves
+{"estado":"ok","baseDatos":"cordova_apf3_dev","conexion":true}
+{"version":"8.0.40","baseDatos":"cordova_apf3_dev"}
+categoria_producto, cliente, detalle_pedido, especificacion, pedido, pedido_personalizado, personalizacion, producto, recordatorio, referencia_comprobante, rol, usuario

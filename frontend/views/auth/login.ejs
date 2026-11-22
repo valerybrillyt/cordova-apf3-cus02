@@ -1,0 +1,17 @@
+<%- include('../layouts/cabecera') %>
+<section class="panel estrecho">
+  <h1>Iniciar sesión</h1>
+  <p class="ayuda">Use el identificador de acceso del personal. Esta pantalla es el acceso mínimo del CUS01 para poder registrar pedidos.</p>
+  <% if (mensaje) { %>
+    <div class="alert alert-warning" role="alert"><%= mensaje %></div>
+  <% } %>
+  <form method="post" action="/login" class="formulario" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <label for="identificador">Identificador</label>
+    <input class="form-control" id="identificador" name="identificador" value="<%= identificador %>" required maxlength="100">
+    <label for="clave">Clave</label>
+    <input class="form-control" id="clave" name="clave" type="password" required>
+    <button class="btn btn-principal" type="submit">Entrar</button>
+  </form>
+</section>
+<%- include('../layouts/pie') %>

@@ -1,0 +1,3 @@
+Fecha: Sat Nov 21 23:23:02 -05 2026
+Operación: pedido confirmado en cordova_apf3_dev tras el formulario del navegador
+idPedido=1 modalidad=MESA numeroMesa=5 confirmado=1 fecha=2026-11-22T04:18:03.000Z idDetalle=1 idProducto=4 nombre=Capuchino cantidad=2 idEspecificacion=1 tipo=CREMA valor=SIN_CREMA

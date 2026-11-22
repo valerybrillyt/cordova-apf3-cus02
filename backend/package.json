@@ -1,0 +1,27 @@
+{
+  "name": "cordova-apf3",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Backend Express del CUS02 para Pastelería-Cafetería Córdova, local sede Chifa",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "seed": "node ../database/seed.js",
+    "esquema": "node ../database/aplicar_esquema.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.14.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.0"
+  }
+}

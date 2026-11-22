@@ -1,0 +1,71 @@
+<%- include('../layouts/cabecera') %>
+<section class="panel">
+  <div class="titulo-fila">
+    <div>
+      <h1>Registrar pedido</h1>
+      <p class="ayuda">Mesa o para llevar. Agregue productos del catálogo real, revise el resumen y confirme.</p>
+    </div>
+    <a href="/">Volver</a>
+  </div>
+
+  <div id="aviso" class="alert d-none" role="status"></div>
+
+  <form id="formPedido" class="formulario" autocomplete="off">
+    <fieldset>
+      <legend>Modalidad</legend>
+      <div class="opciones">
+        <label class="opcion"><input type="radio" name="modalidad" value="MESA" checked> Mesa</label>
+        <label class="opcion"><input type="radio" name="modalidad" value="PARA_LLEVAR"> Para llevar</label>
+      </div>
+    </fieldset>
+
+    <div id="grupoMesa">
+      <label for="numeroMesa">Número de mesa</label>
+      <input class="form-control" id="numeroMesa" name="numeroMesa" type="text" maxlength="20" placeholder="Por ejemplo, 5">
+    </div>
+
+    <fieldset>
+      <legend>Producto</legend>
+      <div class="rejilla">
+        <div>
+          <label for="producto">Del catálogo</label>
+          <select id="producto" class="form-select"></select>
+        </div>
+        <div>
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" class="form-control" type="number" min="1" step="1" value="1">
+        </div>
+      </div>
+      <div id="especificaciones" class="especificaciones"></div>
+      <button type="button" id="agregar" class="btn btn-secundario">Agregar al pedido</button>
+      <p id="notaCatalogo" class="ayuda"></p>
+    </fieldset>
+
+    <h2>Resumen</h2>
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Especificaciones</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="resumen">
+          <tr id="vacio"><td colspan="4">Todavía no hay productos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button type="submit" id="confirmar" class="btn btn-principal">Confirmar pedido</button>
+  </form>
+
+  <section id="confirmacion" class="confirmacion d-none" aria-live="polite">
+    <p class="codigo-etiqueta">Pedido registrado</p>
+    <p class="codigo" id="codigoPedido"></p>
+    <a class="btn btn-principal" href="/pedidos/resultado">Ver el registro de esta sesión</a>
+  </section>
+</section>
+<script type="module" src="/js/RegistroPedidoComponent.js"></script>
+<%- include('../layouts/pie') %>

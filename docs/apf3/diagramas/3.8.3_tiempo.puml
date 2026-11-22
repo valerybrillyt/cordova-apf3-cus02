@@ -1,0 +1,35 @@
+@startuml 3.8.3_tiempo
+title Seguimiento de torta personalizada — tiempos relativos
+scale 100 as 80 pixels
+
+robust "PedidoPersonalizado" as PP
+concise "Producción" as PR
+concise "Cajera o encargada" as CJ
+
+@0
+PP is RECIBIDO
+PR is EnEspera
+CJ is EnEspera
+
+@100
+PR -> PP : inicia elaboración
+PP is EN_ELABORACION
+PR is Elaborando
+
+@200
+PR -> PP : marca listo
+PP is LISTO
+PR is EnEspera
+
+@300
+CJ -> PP : confirma entrega
+PP is ENTREGADO
+CJ is Entrega
+
+@400
+
+highlight 0 to 100 : t0 RECIBIDO
+highlight 100 to 200 : t1 EN_ELABORACION
+highlight 200 to 300 : t2 LISTO
+highlight 300 to 400 : t3 ENTREGADO
+@enduml

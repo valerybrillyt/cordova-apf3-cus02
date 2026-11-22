@@ -1,0 +1,24 @@
+# MySQL Server 8 local para la demostración.
+# No sustituye el motor: la imagen oficial es MySQL 8.0.
+# Las credenciales viven en mysql.local.env, que no se versiona.
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: cordova-mysql8
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./mysql.local.env
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=caching_sha2_password
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+volumes: {}

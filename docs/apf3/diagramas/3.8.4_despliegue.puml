@@ -1,0 +1,25 @@
+@startuml 3.8.4_despliegue
+title Despliegue propuesto — la demostración local usó una sola computadora
+skinparam shadowing false
+
+node "PC del local\n«dispositivo»" as PC {
+  artifact "Navegador del personal\nde atención" as NAV1
+}
+node "Equipo autorizado\nde producción\n«dispositivo»" as PROD {
+  artifact "Navegador autorizado\nde producción" as NAV2
+}
+node "Servidor de aplicación web\n«nodo propuesto»" as APP {
+  artifact "Aplicación web Córdova\nNode.js + Express 5" as WAR
+}
+node "Servidor de base de datos\nMySQL Server 8" as DB {
+  artifact "Base Córdova\n12 tablas" as BD
+}
+
+NAV1 --> WAR : Internet / HTTPS propuesto
+NAV2 --> WAR : Internet / HTTPS propuesto
+WAR --> BD : conexión MySQL\nmysql2/promise
+
+note bottom of APP
+Demostración del 21/11/2026: un solo equipo macOS,\nExpress en 127.0.0.1:3000 y MySQL 8.0.40 en 127.0.0.1:3306.\nHTTP local, no un hosting externo.\nWhatsApp y Trinetsoft no son nodos de este diagrama.
+end note
+@enduml

@@ -1,0 +1,12 @@
+<%- include('layouts/cabecera') %>
+<section class="panel estrecho">
+  <h1><%= titulo %></h1>
+  <p><%= mensaje %></p>
+  <% if (detalle) { %><p class="ayuda"><%= detalle %></p><% } %>
+  <% if (usuario) { %>
+    <a class="btn btn-principal" href="/">Volver al inicio</a>
+  <% } else { %>
+    <a class="btn btn-principal" href="/login">Ir al acceso</a>
+  <% } %>
+</section>
+<%- include('layouts/pie') %>

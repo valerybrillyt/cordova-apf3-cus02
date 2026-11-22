@@ -1,0 +1,12 @@
+<%- include('layouts/cabecera') %>
+<section class="panel">
+  <h1>Buen día</h1>
+  <p>Sesión de <strong><%= nombreRolVisible %></strong>.</p>
+  <% if (usuario.nombreRol === 'ATENCION') { %>
+    <p class="ayuda">Puede registrar un pedido de mesa o para llevar. El sistema guarda el pedido solo después de validarlo y confirmar la transacción.</p>
+    <a class="btn btn-principal" href="/pedidos/nuevo">Nuevo pedido</a>
+  <% } else { %>
+    <p class="ayuda">Su rol no registra pedidos de salón. El CUS02 está reservado al personal de atención.</p>
+  <% } %>
+</section>
+<%- include('layouts/pie') %>

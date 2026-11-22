@@ -1,0 +1,12 @@
+{
+  "name": "cordova",
+  "private": true,
+  "type": "module",
+  "description": "Sistema de pedidos Córdova — demostración APF3 del CUS02",
+  "scripts": {
+    "start": "npm start --prefix backend",
+    "test": "npm test --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "esquema": "npm run esquema --prefix backend"
+  }
+}

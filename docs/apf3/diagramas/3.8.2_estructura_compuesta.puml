@@ -1,0 +1,38 @@
+@startuml 3.8.2_estructura_compuesta
+title Modulo de pedidos personalizados (PA03) — propuesto, no implementado
+skinparam shadowing false
+
+component "ModuloPedidosPersonalizados\n«elemento estructurado»\nPA03 · propuesto" as MOD {
+  portin "puertoRegistro" as pReg
+  portout "puertoPedidoBase" as pPed
+  portout "puertoAutorizacion" as pAut
+  portout "puertoPersistencia" as pPer
+
+  component "VistaPedidoPersonalizado\n«parte · presentación EJS»" as V
+  component "ControladorPersonalizados\n«parte · control»" as C
+  component "PedidoPersonalizadoService\n«parte · negocio»" as S
+  component "PedidoPersonalizadoDAO\n«parte · persistencia»" as D
+
+  pReg --> V
+  V --> C : conector UI
+  C --> S : conector caso de uso
+  S --> D : conector DAO
+  S --> pPed
+  S --> pAut
+  D --> pPer
+}
+
+interface "IRegistrarEncargo" as IReg
+interface "IPedidoConfirmado\nprovista por PA01" as IPed
+interface "IAutorizar\nprovista por PA05" as IAut
+interface "IMySQL8" as IMy
+
+IReg - pReg
+pPed - IPed
+pAut - IAut
+pPer - IMy
+
+note bottom of MOD
+Código existente de referencia: GestionPedidosController,\nPedidoService y PedidoDAO del CUS02.\nEste módulo todavía no tiene archivos propios.\nLa torta personalizada no se registra por POST /api/pedidos.
+end note
+@enduml

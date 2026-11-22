@@ -1,0 +1,19 @@
+<%- include('../layouts/cabecera') %>
+<section class="panel estrecho">
+  <h1>Último pedido de esta sesión</h1>
+  <% if (ultimoPedido) { %>
+    <p class="codigo-etiqueta">Código confirmado por el servidor</p>
+    <p class="codigo"><%= ultimoPedido.idPedido %></p>
+    <p>Modalidad: <strong><%= ultimoPedido.modalidad %></strong></p>
+    <% if (ultimoPedido.numeroMesa) { %>
+      <p>Mesa: <strong><%= ultimoPedido.numeroMesa %></strong></p>
+    <% } %>
+    <p class="ayuda">Este código es el identificador devuelto después del registro. Puede contrastarlo en MySQL.</p>
+  <% } else { %>
+    <p>Esta sesión todavía no tiene un pedido confirmado.</p>
+  <% } %>
+  <% if (usuario.nombreRol === 'ATENCION') { %>
+    <a class="btn btn-principal" href="/pedidos/nuevo">Registrar otro</a>
+  <% } %>
+</section>
+<%- include('../layouts/pie') %>

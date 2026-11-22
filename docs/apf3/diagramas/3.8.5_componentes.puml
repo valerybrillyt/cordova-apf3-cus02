@@ -1,0 +1,35 @@
+@startuml 3.8.5_componentes
+title Componentes PA01–PA05
+skinparam shadowing false
+
+component "PA05 Acceso y permisos\n«implementación mínima de CUS01»" as PA05 {
+  interface "IAutorizar" as IA
+}
+component "PA01 Gestión de pedidos\n«CUS02 implementado»" as PA01 {
+  interface "IRegistrarPedidoSalon" as IR
+  interface "IConsultarPedidoConfirmado" as IC
+}
+component "PA02 Preparación local\n«previsto»" as PA02
+component "PA03 Pedidos personalizados\n«previsto»" as PA03 {
+  interface "IEncargo" as IE
+}
+component "PA04 Seguimiento y recordatorios\n«previsto»" as PA04 {
+  component "PlanificadorRecordatorios\n«interno, no es un servicio externo»" as PLAN
+}
+database "MySQL 8\n12 tablas" as MYSQL
+
+PA02 ..> IC : requiere
+PA02 ..> IA : requiere
+PA03 ..> IR : requiere\npedido base
+PA03 ..> IA : requiere
+PA04 ..> IE : requiere
+PA04 ..> IC : requiere
+PA04 ..> IA : requiere
+PA01 ..> IA : requiere
+PLAN --> IE
+
+PA01 --> MYSQL
+PA03 --> MYSQL
+PA04 --> MYSQL
+PA05 --> MYSQL
+@enduml

@@ -1,0 +1,11 @@
+backend/node_modules/
+backend/.env
+backend/.env.*
+!backend/.env.example
+database/mysql.local.env
+database/mysql-local/
+database/mysql-data/
+*.log
+.DS_Store
+.DS_Store?
+Thumbs.db

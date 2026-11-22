@@ -1,0 +1,160 @@
+:root {
+  --cacao: #3f2a24;
+  --terracota: #b85c38;
+  --crema: #f4ecdf;
+  --papel: #fffaf3;
+  --hoja: #3e5c49;
+  --linea: #e4d5c3;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(184, 92, 56, 0.16), transparent 32rem),
+    var(--crema);
+  color: var(--cacao);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, .marca, .codigo {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+}
+
+.encabezado {
+  background: var(--cacao);
+  color: #f8f1e7;
+}
+
+.encabezado-interno,
+.sesion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.encabezado-interno {
+  padding: 1rem 0;
+}
+
+.marca {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.sede, .ayuda, .pie {
+  color: #6d584c;
+}
+
+.sede {
+  margin: 0;
+  color: #f0d7c6;
+  font-size: 0.92rem;
+}
+
+.quien {
+  margin-right: 0.75rem;
+}
+
+.panel {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 16px 40px rgba(63, 42, 36, 0.06);
+}
+
+.estrecho {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.titulo-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.formulario {
+  display: grid;
+  gap: 0.9rem;
+}
+
+fieldset {
+  border: 1px solid var(--linea);
+  border-radius: 0.9rem;
+  padding: 0.9rem;
+}
+
+legend {
+  font-size: 0.95rem;
+  padding: 0 0.3rem;
+}
+
+.opciones, .rejilla, .especificaciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.rejilla > div,
+.especificaciones .spec {
+  flex: 1 1 14rem;
+}
+
+.opcion {
+  background: #f7f0e6;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+}
+
+.btn-principal {
+  background: var(--terracota);
+  border: 0;
+  color: white;
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+}
+
+.btn-principal:hover {
+  background: #9b4b2d;
+  color: white;
+}
+
+.btn-secundario {
+  background: var(--hoja);
+  color: white;
+  border: 0;
+  border-radius: 999px;
+}
+
+.codigo-etiqueta {
+  margin-bottom: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.codigo {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--hoja);
+}
+
+.confirmacion {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e7f2ea;
+}
+
+.pie {
+  padding: 1.5rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
