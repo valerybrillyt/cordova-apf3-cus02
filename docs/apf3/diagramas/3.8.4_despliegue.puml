@@ -1,4 +1,5 @@
-@startuml 3.8.4_despliegue
+@startuml APF3_384_despliegue
+!pragma layout smetana
 title Despliegue propuesto — la demostración local usó una sola computadora
 skinparam shadowing false
 

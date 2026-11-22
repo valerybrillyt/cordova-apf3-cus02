@@ -1,4 +1,5 @@
-@startuml 3.8.2_estructura_compuesta
+@startuml APF3_382_estructura_compuesta
+!pragma layout smetana
 title Modulo de pedidos personalizados (PA03) — propuesto, no implementado
 skinparam shadowing false
 

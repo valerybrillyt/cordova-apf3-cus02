@@ -1,4 +1,5 @@
-@startuml 3.8.3_tiempo
+@startuml APF3_383_tiempo
+!pragma layout smetana
 title Seguimiento de torta personalizada — tiempos relativos
 scale 100 as 80 pixels
 

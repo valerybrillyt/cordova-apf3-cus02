@@ -1,4 +1,5 @@
-@startuml 3.8.5_componentes
+@startuml APF3_385_componentes
+!pragma layout smetana
 title Componentes PA01–PA05
 skinparam shadowing false
 
